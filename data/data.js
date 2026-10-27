@@ -308,7 +308,7 @@ window.NK20_DATA = {
           "name": "Đồng Thành Đạt",
           "role": "A trưởng",
           "image": "TieuDoi/TĐ4/Đồng Thành Đạt- A trưởng.jpg",
-          "motto": ""
+          "motto": "Chúc tập thể NK20 mạnh khỏe, hạnh phúc, thành công. Mỗi cá nhân là 1 mảnh ghé, giúp NK20 thống nhất, đoàn kết và phát triển"
         }
       ]
     },

@@ -2,11 +2,29 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trung đội NK20 - Đại học An ninh Nhân dân | Kỷ yếu điện tử</title>
   <meta name="description"
-    content="Website kỷ yếu điện tử của Trung đội NK20 - Đại học An ninh Nhân dân. Hành trình tự hào & khát vọng." />
+    content="Website kỷ yếu điện tử của Trung đội NK20 - Đại học An ninh Nhân dân. Hành trình tự hào & khát vọng.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="vi">
+  <link rel="canonical" href="trungdoink20.github.io/ky-yeu-nk20-annd/">
+
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trung đội NK20 - Đại học An ninh Nhân dân | Kỷ yếu điện tử">
+  <meta property="og:description"
+    content="Website kỷ yếu điện tử của Trung đội NK20 - Đại học An ninh Nhân dân. Hành trình tự hào & khát vọng.">
+  <meta property="og:image" content="https://trungdoink20.github.io/ky-yeu-nk20-annd/NK20/ANND.png">
+  <meta property="og:url" content="https://trungdoink20.github.io/ky-yeu-nk20-annd/">
+  <meta property="og:site_name" content="Kỷ yếu trung đội NK20">
+  <meta property="og:locale" content="vi_VN">
+
+
+  <meta name="twitter:card" content="summary_large_image">
+
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,8 +62,8 @@
         <a href="#officers">Ban chỉ huy</a>
         <a href="#squads">Tiểu đội</a>
         <a href="#activities">Hoạt động</a>
-        <a href="#thanks">Lời cảm tạ</a>
         <a href="#gallery">Khoảnh khắc</a>
+        <a href="#thanks">Lời cuối</a>
         <!-- <a href="#timeline">Dòng thời gian</a> -->
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Mở menu">☰</button>
@@ -221,7 +239,7 @@
         <a href="#squads">Tiểu đội</a>
         <a href="#gallery">Khoảnh khắc</a>
         <a href="#activities">Hoạt động</a>
-        <a href="#thanks">Lời cảm tạ</a>
+        <a href="#thanks">Lời cuối</a>
       </div>
     </div>
   </footer>
@@ -232,13 +250,15 @@
     <div class="modal-dialog unlock-dialog" role="dialog" aria-modal="true">
       <button class="modal-close" data-unlock-close aria-label="Đóng">×</button>
       <div class="modal-body unlock-body">
-        <div class="unlock-icon">🔐</div>
+        <div class="unlock-icon">
+          <img src="img/lock-solid-full.png" />
+        </div>
         <h2 class="modal-name">Mở khóa thông tin</h2>
-        <p class="unlock-desc">Nhập số điện thoại của bạn để giải mã và hiển thị thông tin cá nhân.</p>
+        <p class="unlock-desc">Nhập số điện thoại của bạn để xác thực và hiển thị thông tin cá nhân.</p>
         <div class="unlock-form">
           <input type="tel" id="unlockPhone" placeholder="Số điện thoại" aria-label="Số điện thoại" />
           <div class="unlock-actions">
-            <button class="btn btn-gold" id="unlockSubmit">Giải mã</button>
+            <button class="btn btn-gold" id="unlockSubmit">Xác thực</button>
             <button class="btn btn-ghost" id="unlockSkip" type="button">Bỏ qua</button>
           </div>
         </div>

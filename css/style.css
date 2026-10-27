@@ -788,6 +788,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .unlock-dialog { max-width: 440px; }
 .unlock-body { padding: 32px 28px; display: block; text-align: center; }
 .unlock-icon { font-size: 2.4rem; margin-bottom: 8px; }
+.unlock-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+.unlock-icon img {
+  width: 80px;
+  height: 80px;
+};
 .unlock-body .modal-name { margin-bottom: 6px; }
 .unlock-desc { color: var(--muted); margin: 4px 0 20px; font-size: 0.95rem; line-height: 1.6; }
 .unlock-form { display: flex; flex-direction: column; gap: 12px; }
