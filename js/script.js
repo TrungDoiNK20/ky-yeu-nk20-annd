@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $$('.main-nav a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
 
   const heroBg = $('#heroBg');
+  const heroShapes = document.querySelector('.hero-shapes');
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (ticking) return;
@@ -89,6 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const y = window.scrollY;
       if (heroBg && y < window.innerHeight) {
         heroBg.style.transform = `translate3d(0, ${y * 0.35}px, 0)`;
+      }
+      if (heroShapes && y < window.innerHeight) {
+        heroShapes.style.transform = `translate3d(0, ${y * 0.15}px, 0)`;
       }
       ticking = false;
     });
@@ -101,7 +105,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const statMembers = $('#statMembers');
-  if (statMembers) statMembers.textContent = DATA.meta.rosterTotal || DATA.meta.totalMembers;
+  const targetCount = DATA.meta.rosterTotal || DATA.meta.totalMembers || 53;
+  if (statMembers) {
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      statMembers.textContent = targetCount;
+    } else {
+      let start = 0;
+      const duration = 1400;
+      const startTime = performance.now();
+      const tick = (now) => {
+        const t = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        statMembers.textContent = Math.round(start + (targetCount - start) * eased);
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      // start when hero stats enter viewport
+      const statsEl = document.querySelector('.hero-stats');
+      if (statsEl && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              requestAnimationFrame(tick);
+              io.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        io.observe(statsEl);
+      } else {
+        requestAnimationFrame(tick);
+      }
+    }
+  }
 
   const tabsEl = $('#squadTabs');
   const panelEl = $('#squadPanel');
